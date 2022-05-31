@@ -26,8 +26,6 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: bundle install
-        run: bundle install --jobs 4 --retry 3
       - name: create database
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -e "create database jinrai_test"
       - name: RSpec
