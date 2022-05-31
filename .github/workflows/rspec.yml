@@ -29,4 +29,7 @@ jobs:
       - name: create database
         run: mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -e "create database jinrai_test"
       - name: RSpec
-        run: bundle exec rspec
+        run:
+          ruby -v
+          bundle exec ruby -v
+          bundle exec rspec
